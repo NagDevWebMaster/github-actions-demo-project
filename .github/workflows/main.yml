@@ -1,0 +1,16 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing GitHub Actions 🚀
+on: [push] # The Event: Runs every time you push code
+
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest # The Runner: The OS the code runs on
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4 # A pre-made action that copies your code to the runner
+
+      - name: List files in the repository
+        run: ls ${{ github.workspace }}
+
+      - name: Say Hello
+        run: echo "The workflow is working successfully!"
